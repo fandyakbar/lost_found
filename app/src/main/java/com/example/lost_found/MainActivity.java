@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements BarangAdapter.OnB
 
     @Override
     public void onClick(View v, Barang barang) {
-        Intent detailBarangIntent = new Intent(this, com.example.lostfound.DetailbarangActivity.class);
+        Intent detailBarangIntent = new Intent(this, com.example.lost_found.DetailbarangActivity.class);
         detailBarangIntent.putExtra("NAMA_BARANG", barang.nama);
         startActivity(detailBarangIntent);
 
