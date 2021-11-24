@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lost_found.R;
@@ -18,16 +19,41 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.BarangView
 
     ArrayList<Barang> listData = new ArrayList<>();
 
-    public class BarangViewHolder extends  RecyclerView.ViewHolder{
+    public class BarangViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener{
+
         TextView textNamaBarang, textLokasi, textPenemu, textKeterangan;
+
+
+
         public BarangViewHolder(@NonNull View itemView) {
             super(itemView);
             textNamaBarang = itemView.findViewById(R.id.textNamaBarang);
             textLokasi = itemView.findViewById(R.id.textLokasi);
             textPenemu = itemView.findViewById(R.id.textPenemu);
             textKeterangan = itemView.findViewById(R.id.textKeterangan);
+            itemView.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View v) {
+            if(listener != null){
+                listener.onClick(v, listData.get(getAdapterPosition()));
+            }
+
+        }
+    }
+
+    // Click Listener
+    OnBarangHolderClickListener listener = null;
+
+    public interface OnBarangHolderClickListener{
+
+        void onClick(View v,  Barang barang);
+
+    }
+
+    public void setListener(OnBarangHolderClickListener listener) {
+        this.listener = listener;
     }
 
     public void setListData(ArrayList<Barang> listData) {

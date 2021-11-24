@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.lost_found.adapter.BarangAdapter;
@@ -14,7 +15,7 @@ import com.example.lost_found.model.Barang;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BarangAdapter.OnBarangHolderClickListener{
     RecyclerView rvListBarang;
 
     @Override
@@ -24,12 +25,14 @@ public class MainActivity extends AppCompatActivity {
 
         BarangAdapter adapter = new BarangAdapter();
         adapter.setListData(getBarang());
+        adapter.setListener(this);
 
         rvListBarang = findViewById(R.id.rvListBarang);
         rvListBarang.setAdapter(adapter);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvListBarang.setLayoutManager(layoutManager);
+
 
         Intent mainIntent = getIntent();
         String data = mainIntent.getStringExtra("nama_user");
@@ -102,6 +105,13 @@ public class MainActivity extends AppCompatActivity {
         return listBarang;
     }
 
+    @Override
+    public void onClick(View v, Barang barang) {
+        Intent detailBarangIntent = new Intent(this, com.example.lostfound.DetailbarangActivity.class);
+        detailBarangIntent.putExtra("NAMA_BARANG", barang.nama);
+        startActivity(detailBarangIntent);
+
+    }
 }
    
     
