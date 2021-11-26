@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lost_found.R;
@@ -21,16 +20,15 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.BarangView
 
     public class BarangViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener{
 
-        TextView textNamaBarang, textLokasi, textPenemu, textKeterangan;
+        TextView textNamaBarang, textKategori, klikDetails;
 
 
 
         public BarangViewHolder(@NonNull View itemView) {
             super(itemView);
             textNamaBarang = itemView.findViewById(R.id.textNamaBarang);
-            textLokasi = itemView.findViewById(R.id.textLokasi);
-            textPenemu = itemView.findViewById(R.id.textPenemu);
-            textKeterangan = itemView.findViewById(R.id.textKeterangan);
+            textKategori = itemView.findViewById(R.id.textKategori);
+            klikDetails = itemView.findViewById(R.id.klikDetails);
             itemView.setOnClickListener(this);
         }
 
@@ -74,9 +72,8 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.BarangView
     public void onBindViewHolder(@NonNull BarangViewHolder holder, int position) {
         Barang barang = listData.get(position);
         holder.textNamaBarang.setText(barang.nama);
-        holder.textKeterangan.setText(barang.Keterangan);
-        holder.textPenemu.setText(barang.Penemu);
-        holder.textLokasi.setText(barang.Lokasi);
+        holder.textKategori.setText(barang.Kategori);
+        holder.klikDetails.setText(barang.details);
     }
 
     @Override

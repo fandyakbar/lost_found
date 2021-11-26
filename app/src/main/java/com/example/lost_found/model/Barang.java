@@ -4,17 +4,15 @@ import java.util.ArrayList;
 
 public class Barang {
     public String nama;
-    public String Lokasi;
-    public String Penemu;
-    public String Keterangan;
+    public String Kategori;
+    public String details;
 
-    public Barang(){}
+    public Barang(String s, String s1){}
 
-    public Barang(String nama, String lokasi, String penemu, String keterangan) {
+    public Barang(String nama, String Kategori, String details) {
         this.nama = nama;
-        Lokasi = lokasi;
-        Penemu = penemu;
-        Keterangan = keterangan;
+        Kategori = Kategori;
+        details = details;
     }
 
 }

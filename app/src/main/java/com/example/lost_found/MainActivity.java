@@ -45,64 +45,39 @@ public class MainActivity extends AppCompatActivity implements BarangAdapter.OnB
     public ArrayList<Barang> getBarang(){
         ArrayList<Barang> listBarang = new ArrayList<Barang>();
         String nama;
-        String Lokasi;
-        String Penemu;
-        String Keterangan;
+        String Kategori;
+        String details = "Details";
         listBarang.add(new Barang(
                 nama = "Tumbler",
-                Lokasi="PKM Unand",
-                Penemu= "Budi",
-                Keterangan= "Warna Hitam ada logo unand"));
+                Kategori = "Lain-lain"));
         listBarang.add(new Barang(
-                nama="Dompet",
-                Lokasi="Sekitar MNI Unand",
-                Penemu="Hasya",
-                Keterangan="Warna Hitam, Ada sejumlah uang namun tidak ada kertu identitas"));
+                nama = "Tas Converse",
+                Kategori = "Tas"));
         listBarang.add(new Barang(
-                nama="kalkulator",
-                Lokasi="Gedung F",
-                Penemu="Mayang",
-                Keterangan="ada Logo FA"));
+                nama = "Laptop HP Envy",
+                Kategori = "Elektronik"));
         listBarang.add(new Barang(
-                nama="Mouse Gambing",
-                Lokasi="Gedung H",
-                Penemu="Tipa",
-                Keterangan="Warna hitam"));
+                nama = "Tas 'False Pretense'",
+                Kategori = "Tas"));
         listBarang.add(new Barang(
-                nama="Kunci Motor",
-                Lokasi="DPR",
-                Penemu="Fandy",
-                Keterangan="Gantungan Kunci Spongebob"));
+                nama = "Kaos Merah Maroon",
+                Kategori = "Pakaian"));
         listBarang.add(new Barang(
-                nama="Kacamata",
-                Lokasi="PKM Unand",
-                Penemu="Stphen",
-                Keterangan="tangkai Warna Hitam"));
+                nama = "Converse Putih",
+                Kategori = "Sepatu"));
         listBarang.add(new Barang(
-                nama="Earphone",
-                Lokasi="MNI",
-                Penemu="Budi",
-                Keterangan="masih ada kotaknya"));
+                nama = "Jam DW Coklat",
+                Kategori = "Pakaian"));
         listBarang.add(new Barang(
-                nama="STNK Motor",
-                Lokasi="PKM Unand",
-                Penemu="Akbar",
-                Keterangan="Motor Beat Hitam Plat XX 8989 YY"));
+                nama = "iPhone 11 Pro",
+                Kategori = "Elektronik"));
         listBarang.add(new Barang(
-                nama="Kacamata",
-                Lokasi="PKM Unand",
-                Penemu="Stphen",
-                Keterangan="tangkai Warna Hitam"));
+                nama = "Jaket Hitam",
+                Kategori = "Pakaian"));
         listBarang.add(new Barang(
-                nama="Earphone",
-                Lokasi="MNI",
-                Penemu="Budi",
-                Keterangan="masih ada kotaknya"));
-        listBarang.add(new Barang(
-                nama="STNK Motor",
-                Lokasi="PKM Unand",
-                Penemu="Akbar",
-                Keterangan="Motor Beat Hitam Plat XX 8989 YY"));
+                nama = "Dompet Coklat",
+                Kategori = "Pakaian"));
+
 
         return listBarang;
     }
