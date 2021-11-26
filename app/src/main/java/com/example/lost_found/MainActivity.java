@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements BarangAdapter.OnB
 
     //on click pada profile
     public void homeToProfile(View view){
-        Intent profileIntent = new Intent(this, ProfileActivity.class);
+        Intent profileIntent = new Intent(this, com.example.lost_found.ProfileActivity.class);
         startActivity(profileIntent);
     }
 }
