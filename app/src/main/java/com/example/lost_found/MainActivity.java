@@ -49,45 +49,62 @@ public class MainActivity extends AppCompatActivity implements BarangAdapter.OnB
         String details = "Details";
         listBarang.add(new Barang(
                 nama = "Tumbler",
-                Kategori = "Lain-lain"));
+                Kategori = "Lain-lain",
+                details));
         listBarang.add(new Barang(
                 nama = "Tas Converse",
-                Kategori = "Tas"));
+                Kategori = "Tas",
+                details));
         listBarang.add(new Barang(
                 nama = "Laptop HP Envy",
-                Kategori = "Elektronik"));
+                Kategori = "Elektronik",
+                details));
         listBarang.add(new Barang(
                 nama = "Tas 'False Pretense'",
-                Kategori = "Tas"));
+                Kategori = "Tas",
+                details));
         listBarang.add(new Barang(
                 nama = "Kaos Merah Maroon",
-                Kategori = "Pakaian"));
+                Kategori = "Pakaian",
+                details));
         listBarang.add(new Barang(
                 nama = "Converse Putih",
-                Kategori = "Sepatu"));
+                Kategori = "Sepatu",
+                details));
         listBarang.add(new Barang(
                 nama = "Jam DW Coklat",
-                Kategori = "Pakaian"));
+                Kategori = "Pakaian",
+                details));
         listBarang.add(new Barang(
                 nama = "iPhone 11 Pro",
-                Kategori = "Elektronik"));
+                Kategori = "Elektronik",
+                details));
         listBarang.add(new Barang(
                 nama = "Jaket Hitam",
-                Kategori = "Pakaian"));
+                Kategori = "Pakaian",
+                details));
         listBarang.add(new Barang(
                 nama = "Dompet Coklat",
-                Kategori = "Pakaian"));
+                Kategori = "Pakaian",
+                details));
 
 
         return listBarang;
     }
 
     @Override
+    //on click pada list barang
     public void onClick(View v, Barang barang) {
         Intent detailBarangIntent = new Intent(this, com.example.lost_found.DetailbarangActivity.class);
         detailBarangIntent.putExtra("NAMA_BARANG", barang.nama);
         startActivity(detailBarangIntent);
 
+    }
+
+    //on click pada profile
+    public void homeToProfile(View view){
+        Intent profileIntent = new Intent(this, ProfileActivity.class);
+        startActivity(profileIntent);
     }
 }
    

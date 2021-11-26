@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/dm_serif_text"
+        android:text="Profile"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/viewProfileData"
+        android:layout_width="411dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="40dp"
+        android:background="#C4C4C4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewProfileData"
+        app:layout_constraintStart_toStartOf="@+id/viewProfileData"
+        app:layout_constraintTop_toTopOf="@+id/viewProfileData"
+        app:srcCompat="@drawable/user" />
+
+    <TextView
+        android:id="@+id/textNamaProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toEndOf="@+id/imageView14"
+        app:layout_constraintTop_toTopOf="@+id/viewProfileData" />
+
+    <TextView
+        android:id="@+id/textNoHP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/textNamaProfile"
+        app:layout_constraintTop_toBottomOf="@+id/textNamaProfile" />
+
+    <View
+        android:id="@+id/viewProfileMenu"
+        android:layout_width="411dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="60dp"
+        android:background="#C4C4C4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewProfileData" />
+
+    <TextView
+        android:id="@+id/textHistoryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="History"
+        app:layout_constraintStart_toStartOf="@+id/viewProfileMenu"
+        app:layout_constraintTop_toTopOf="@+id/viewProfileMenu" />
+
+    <TextView
+        android:id="@+id/textFoundItemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Found Item"
+        app:layout_constraintStart_toStartOf="@+id/textHistoryButton"
+        app:layout_constraintTop_toBottomOf="@+id/textHistoryButton" />
+
+    <TextView
+        android:id="@+id/textAccountButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Account"
+        app:layout_constraintStart_toStartOf="@+id/textFoundItemButton"
+        app:layout_constraintTop_toBottomOf="@+id/textFoundItemButton" />
+
+    <TextView
+        android:id="@+id/textChangePassButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Change Password"
+        app:layout_constraintStart_toStartOf="@+id/textAccountButton"
+        app:layout_constraintTop_toBottomOf="@+id/textAccountButton" />
+
+    <ImageButton
+        android:id="@+id/buttonHistory"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/textHistoryButton"
+        app:layout_constraintTop_toTopOf="@+id/viewProfileMenu"
+        app:srcCompat="@drawable/untitled_design_1"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/buttonFoundItem"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/buttonHistory"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHistory"
+        app:srcCompat="@drawable/items_1"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/buttonAccount"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/buttonFoundItem"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFoundItem"
+        app:srcCompat="@drawable/untitled_design__3__1"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/buttonChangePass"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/buttonAccount"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAccount"
+        app:srcCompat="@drawable/untitled_design__1__1"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textLogout"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/roboto"
+        android:paddingTop="5dp"
+        android:text="Logout"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewProfileMenu" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLogout"
+        app:srcCompat="@drawable/logo_1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
