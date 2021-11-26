@@ -1,6 +1,7 @@
 package com.example.lost_found;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity implements BarangAdapter.OnB
         rvListBarang = findViewById(R.id.rvListBarang);
         rvListBarang.setAdapter(adapter);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        //RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
         rvListBarang.setLayoutManager(layoutManager);
 
 
