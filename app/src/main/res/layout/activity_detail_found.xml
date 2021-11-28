@@ -95,7 +95,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textNamaBarang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/dm_serif_text"

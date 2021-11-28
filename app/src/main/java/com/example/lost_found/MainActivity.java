@@ -1,11 +1,13 @@
 package com.example.lost_found;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.lost_found.adapter.BarangAdapter;
@@ -14,7 +16,7 @@ import com.example.lost_found.model.Barang;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BarangAdapter.OnBarangHolderClickListener{
     RecyclerView rvListBarang;
 
     @Override
@@ -24,12 +26,15 @@ public class MainActivity extends AppCompatActivity {
 
         BarangAdapter adapter = new BarangAdapter();
         adapter.setListData(getBarang());
+        adapter.setListener(this);
 
         rvListBarang = findViewById(R.id.rvListBarang);
         rvListBarang.setAdapter(adapter);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        //RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
         rvListBarang.setLayoutManager(layoutManager);
+
 
         Intent mainIntent = getIntent();
         String data = mainIntent.getStringExtra("nama_user");
@@ -40,68 +45,67 @@ public class MainActivity extends AppCompatActivity {
     public ArrayList<Barang> getBarang(){
         ArrayList<Barang> listBarang = new ArrayList<Barang>();
         String nama;
-        String Lokasi;
-        String Penemu;
-        String Keterangan;
+        String Kategori;
+        String details = "Details";
         listBarang.add(new Barang(
                 nama = "Tumbler",
-                Lokasi="PKM Unand",
-                Penemu= "Budi",
-                Keterangan= "Warna Hitam ada logo unand"));
+                Kategori = "Lain-lain",
+                details));
         listBarang.add(new Barang(
-                nama="Dompet",
-                Lokasi="Sekitar MNI Unand",
-                Penemu="Hasya",
-                Keterangan="Warna Hitam, Ada sejumlah uang namun tidak ada kertu identitas"));
+                nama = "Tas Converse",
+                Kategori = "Tas",
+                details));
         listBarang.add(new Barang(
-                nama="kalkulator",
-                Lokasi="Gedung F",
-                Penemu="Mayang",
-                Keterangan="ada Logo FA"));
+                nama = "Laptop HP Envy",
+                Kategori = "Elektronik",
+                details));
         listBarang.add(new Barang(
-                nama="Mouse Gambing",
-                Lokasi="Gedung H",
-                Penemu="Tipa",
-                Keterangan="Warna hitam"));
+                nama = "Tas 'False Pretense'",
+                Kategori = "Tas",
+                details));
         listBarang.add(new Barang(
-                nama="Kunci Motor",
-                Lokasi="DPR",
-                Penemu="Fandy",
-                Keterangan="Gantungan Kunci Spongebob"));
+                nama = "Kaos Merah Maroon",
+                Kategori = "Pakaian",
+                details));
         listBarang.add(new Barang(
-                nama="Kacamata",
-                Lokasi="PKM Unand",
-                Penemu="Stphen",
-                Keterangan="tangkai Warna Hitam"));
+                nama = "Converse Putih",
+                Kategori = "Sepatu",
+                details));
         listBarang.add(new Barang(
-                nama="Earphone",
-                Lokasi="MNI",
-                Penemu="Budi",
-                Keterangan="masih ada kotaknya"));
+                nama = "Jam DW Coklat",
+                Kategori = "Pakaian",
+                details));
         listBarang.add(new Barang(
-                nama="STNK Motor",
-                Lokasi="PKM Unand",
-                Penemu="Akbar",
-                Keterangan="Motor Beat Hitam Plat XX 8989 YY"));
+                nama = "iPhone 11 Pro",
+                Kategori = "Elektronik",
+                details));
         listBarang.add(new Barang(
-                nama="Kacamata",
-                Lokasi="PKM Unand",
-                Penemu="Stphen",
-                Keterangan="tangkai Warna Hitam"));
+                nama = "Jaket Hitam",
+                Kategori = "Pakaian",
+                details));
         listBarang.add(new Barang(
-                nama="Earphone",
-                Lokasi="MNI",
-                Penemu="Budi",
-                Keterangan="masih ada kotaknya"));
-        listBarang.add(new Barang(
-                nama="STNK Motor",
-                Lokasi="PKM Unand",
-                Penemu="Akbar",
-                Keterangan="Motor Beat Hitam Plat XX 8989 YY"));
+                nama = "Dompet Coklat",
+                Kategori = "Pakaian",
+                details));
+
 
         return listBarang;
     }
 
+    @Override
+    //on click pada list barang
+    public void onClick(View v, Barang barang) {
+        Intent detailBarangIntent = new Intent(this, com.example.lost_found.DetailbarangActivity.class);
+        detailBarangIntent.putExtra("NAMA_BARANG", barang.nama);
+        startActivity(detailBarangIntent);
+
+    }
+
+    //on click pada profile
+    public void homeToProfile(View view){
+        Intent profileIntent = new Intent(this, com.example.lost_found.ProfileActivity.class);
+        startActivity(profileIntent);
+    }
 }
    
     

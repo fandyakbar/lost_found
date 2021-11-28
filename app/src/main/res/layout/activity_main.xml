@@ -41,16 +41,18 @@
         app:srcCompat="@drawable/bg_input" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/klikProfile"
         android:layout_width="52dp"
         android:layout_height="52dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="20dp"
+        android:onClick="homeToProfile"
         app:layout_constraintBottom_toTopOf="@+id/imageView13"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toEndOf="@+id/textView18"
-        app:srcCompat="@drawable/user" />
+        app:srcCompat="@drawable/user"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListBarang"

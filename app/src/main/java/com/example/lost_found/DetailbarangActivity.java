@@ -1,7 +1,8 @@
-package com.example.lostfound;
+package com.example.lost_found;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.lost_found.R;
@@ -12,5 +13,8 @@ public class DetailbarangActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailbarang);
+
+        Intent detailBarangIntent = getIntent();
+        String namaBarang = detailBarangIntent.getStringExtra("NAMA_BARANG");
     }
 }
